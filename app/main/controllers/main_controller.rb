@@ -1,12 +1,11 @@
 # By default Volt generates this controller for your Main component
 module Main
   class MainController < Volt::ModelController
-    def index
-      # Add code for when the index view is loaded
-    end
+    model :page
 
-    def about
-      # Add code for when the about view is loaded
+    def add_todo
+      page._todos << { name: page._new_todo }
+      page._new_todo = ''
     end
 
     private
