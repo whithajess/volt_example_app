@@ -9,8 +9,11 @@
         <div class="progress-bar" role="progressbar" style="width: {{ percent_complete }}%;" >
           {{ percent_complete }}%
         </div>
-        <button e-click="complete_all">Complete {{ incomplete}} Tasks</button>
-        <button e-click="clear_completed">Clear Completed {{ completed }} </button>
+        <br>
+        <br>
+          <button e-click="complete_all">Complete {{ incomplete}} Tasks</button>
+          <button e-click="clear_completed">Clear Completed {{ completed }} </button>
+        <br>
         <br>
         <table class="todo-table">
           {{ _todos.each_with_index do |todo, index| }}
