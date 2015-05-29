@@ -1,11 +1,15 @@
 # By default Volt generates this controller for your Main component
 module Main
   class MainController < Volt::ModelController
-    model :page
+    model :store
 
     def add_todo
-      page._todos << { name: page._new_todo }
-      page._new_todo = ''
+      store._todos << { name: store._new_todo }
+      store._new_todo = ''
+    end
+
+    def current_todo
+      store._todos[(params._index || 0).to_i]
     end
 
     private
