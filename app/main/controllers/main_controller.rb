@@ -4,12 +4,12 @@ module Main
     model :store
 
     def add_todo
-      store._todos << { name: store._new_todo }
-      store._new_todo = ''
+      _todos << { name: _new_todo }
+      _new_todo = ''
     end
 
     def current_todo
-      store._todos[(params._index || 0).to_i]
+      _todos[(params._index || 0).to_i]
     end
 
     private
