@@ -16,6 +16,14 @@ module Main
       _todos.count { |todo| todo._completed }
     end
 
+    def complete_all
+      _todos.each { |todo| todo._completed = true }
+    end
+
+    def clear_completed
+      _todos.select { |todo| todo._completed }.each(&:destroy)
+    end
+
     def incomplete
       _todos.size - completed
     end
