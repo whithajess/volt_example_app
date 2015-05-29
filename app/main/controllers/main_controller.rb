@@ -12,6 +12,18 @@ module Main
       _todos[(params._index || 0).to_i]
     end
 
+    def completed
+      _todos.count { |todo| todo._completed }
+    end
+
+    def incomplete
+      _todos.size - completed
+    end
+
+    def percent_complete
+      (completed / _todos.size.to_f * 100).round
+    end
+
     private
 
     # The main template contains a #template binding that shows another
