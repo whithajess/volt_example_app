@@ -4,8 +4,8 @@ module Main
     model :store
 
     def add_todo
-      _todos << { name: _new_todo }
-      _new_todo = ''
+      _todos << { name: page._new_todo }
+      page._new_todo = ''
     end
 
     def current_todo
