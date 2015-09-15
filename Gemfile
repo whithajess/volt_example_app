@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'volt', '0.9.2'
+gem 'volt'
 
 # The following gem's are optional for themeing
 # Twitter bootstrap
@@ -10,18 +10,29 @@ gem 'volt-bootstrap', '~> 0.0.10'
 gem 'volt-bootstrap_jumbotron_theme', '~> 0.1.0'
 
 # User templates for login, signup, and logout menu.
-gem 'volt-user_templates', '~> 0.2.0'
+gem 'volt-user_templates', '~> 0.4.0'
 
 # Add ability to send e-mail from apps.
-gem 'volt-mailer', '~> 0.0.2'
+gem 'volt-mailer', '~> 0.1.0'
+
+# Use rbnacl for message bus encrpytion
+# (optional, if you don't need encryption, disable in app.rb and remove)
+gem 'rbnacl', require: false
+gem 'rbnacl-libsodium', require: false
+
+# Asset compilation gems, they will be required when needed.
+gem 'csso-rails', '~> 0.3.4', require: false
+gem 'uglifier', '>= 2.4.0', require: false
+
+gem 'volt-mongo'
 
 group :test do
   # Testing dependencies
   gem 'rspec', '~> 3.2.0'
   gem 'opal-rspec', '~> 0.4.2'
   gem 'capybara', '~> 2.4.2'
-  gem 'selenium-webdriver', '~> 2.43.0'
-  gem 'chromedriver2-helper', '~> 0.0.8'
+  gem 'selenium-webdriver', '~> 2.47.1'
+  gem 'chromedriver-helper', '~> 1.0.0'
   gem 'poltergeist', '~> 1.5.0'
 end
 
