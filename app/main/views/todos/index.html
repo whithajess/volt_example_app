@@ -16,7 +16,7 @@
         <br>
         <br>
         <table class="todo-table">
-          {{ _todos.each_with_index do |todo, index| }}
+          {{ _todos.where(user_id: Volt.current_user_id).each_with_index do |todo, index| }}
           <!-- Use params to store the current index -->
           <tr
             e-click="params._index = index"

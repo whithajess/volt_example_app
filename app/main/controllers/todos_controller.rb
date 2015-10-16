@@ -12,25 +12,25 @@ module Main
     end
 
     def current_todo
-      _todos[(params._index || 0).to_i]
+      _todos.where(user_id: Volt.current_user_id)[(params._index || 0).to_i]
     end
 
     def completed
-      _todos.count { |todo| todo._completed }
+      _todos.where(user_id: Volt.current_user_id).count { |todo| todo._completed }
     end
 
     def complete_all
-      _todos.each { |todo| todo._completed = true }
+      _todos.where(user_id: Volt.current_user_id).each { |todo| todo._completed = true }
     end
 
     def clear_completed
-      _todos.select { |todo| todo._completed }.each(&:destroy)
+      _todos.where(user_id: Volt.current_user_id).select { |todo| todo._completed }.each(&:destroy)
     end
 
     def incomplete
       # because .size and completed both return promises, we need to
       # call .then on them to get their value.
-      _todos.size.then do |size|
+      _todos.where(user_id: Volt.current_user_id).size.then do |size|
         completed.then do |completed|
           size - completed
         end
@@ -40,7 +40,7 @@ module Main
     def percent_complete
       # because .size and completed both return promises, we need to
       # call .then on them to get their value.
-      _todos.size.then do |size|
+      _todos.where(user_id: Volt.current_user_id).size.then do |size|
         completed.then do |completed|
           (completed / size.to_f * 100).round
         end
