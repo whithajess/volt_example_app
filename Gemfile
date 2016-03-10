@@ -25,6 +25,7 @@ gem 'csso-rails', '~> 0.3.4', require: false
 gem 'uglifier', '>= 2.4.0', require: false
 
 gem 'volt-mongo'
+gem 'bundler-audit'
 
 group :test do
   # Testing dependencies
