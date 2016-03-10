@@ -24,7 +24,7 @@ gem 'rbnacl-libsodium', require: false
 gem 'csso-rails', '~> 0.3.4', require: false
 gem 'uglifier', '>= 2.4.0', require: false
 
-gem 'volt-mongo'
+gem 'volt-mongo', '~> 0.1.0'
 gem 'bundler-audit'
 
 group :test do
