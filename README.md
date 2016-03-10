@@ -1,9 +1,9 @@
 [![Build Status](https://travis-ci.org/whithajess/volt_example_app.svg?branch=master)](https://travis-ci.org/whithajess/volt_example_app)
 [![security](https://hakiri.io/github/whithajess/volt_example_app/master.svg)](https://hakiri.io/github/whithajess/volt_example_app/master)
 
-Just playing around with Volt
+####TODO App
 
-Decided on TODO app will see how i go
+Based on sample app instructions at http://docs.voltframework.com
+Have added some extra functionality like auth etc. just playing around with Volt mainly
 
-## New to Volt?
-Be sure to read the volt docs at http://docs.voltframework.com
+[Hosted Here](https://todo.jessewhitham.co.nz)
