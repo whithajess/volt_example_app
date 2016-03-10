@@ -41,5 +41,5 @@ platform :mri do
   # The implementation of ReadWriteLock in Volt uses concurrent ruby and ext helps performance.
   gem 'concurrent-ruby-ext', '~> 0.8.0'
   gem 'thin', '~> 1.6.0'
-  gem 'bson_ext', '~> 1.9.0'
+  gem 'bson_ext'
 end
